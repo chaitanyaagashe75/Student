@@ -40,7 +40,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete")
-    public Student deleteStudent(@RequestParam int id){
+    public String deleteStudent(@RequestParam int id){
         return studentService.deleteStudent(id);
     }
 
