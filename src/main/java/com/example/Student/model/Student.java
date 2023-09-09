@@ -15,4 +15,8 @@ public class Student {
     String surname;
     String city;
     String phoneNumber;
+
+    public String getPhoneNumber(String phoneNumber) {
+        return phoneNumber;
+    }
 }
