@@ -40,8 +40,8 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete")
-    public Student deleteStudent(@RequestParam Student student){
-        return studentService.deleteStudent(student);
+    public Student deleteStudent(@RequestParam int id){
+        return studentService.deleteStudent(id);
     }
 
 
