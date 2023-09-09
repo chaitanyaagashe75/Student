@@ -16,7 +16,4 @@ public class Student {
     String city;
     String phoneNumber;
 
-    public String getPhoneNumber(String phoneNumber) {
-        return phoneNumber;
-    }
 }
