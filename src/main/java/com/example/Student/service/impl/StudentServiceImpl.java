@@ -40,5 +40,19 @@ public class StudentServiceImpl implements StudentService{
         return studentRepository.findAll();
     }
 
+    @Override
+    public Student updateStudent(Student student) {
+        Optional<Student> OptStudent = studentRepository.findById(student.getId());
+        if(OptStudent.isPresent()){
+           Student student1= OptStudent.get();
+           student1.setName(student.getName());
+           student1.setSurname(student.getSurname());
+           student1.setCity(student.getCity());
+           student1.getPhoneNumber(student.getPhoneNumber());
+        }
+    }
+
+    
+
 
 }

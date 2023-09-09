@@ -34,4 +34,11 @@ public class StudentController {
         return studentService.fetchAllStudent();
     }
 
+    @PutMapping("/update")
+    public Student updateStudent(@RequestBody Student student){
+        return studentService.updateStudent(student);
+    }
+
+
+
 }

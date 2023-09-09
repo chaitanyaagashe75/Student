@@ -12,4 +12,6 @@ public interface StudentService {
   public Student fetchStudent(int id);
 
    public List<Student> fetchAllStudent();
+
+   public Student updateStudent(Student student);
 }
