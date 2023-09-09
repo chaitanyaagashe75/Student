@@ -3,6 +3,7 @@ package com.example.Student.service.impl;
 import com.example.Student.model.Student;
 import com.example.Student.repository.StudentRepository;
 import com.example.Student.service.StudentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class StudentServiceImpl implements StudentService{
     @Autowired
     private StudentRepository studentRepository;
@@ -49,10 +51,25 @@ public class StudentServiceImpl implements StudentService{
            student1.setSurname(student.getSurname());
            student1.setCity(student.getCity());
            student1.getPhoneNumber(student.getPhoneNumber());
+            return student1;
+        }else{
+            log.info("student not found");
+            return null;
         }
     }
 
-    
+    @Override
+    public Student deleteStudent(Student student) {
+        Optional<Student> OptStudent = studentRepository.findById(student.getId());
+        if(OptStudent.isPresent()){
+            Student student1= OptStudent.get();
+            log.info("Student deleted Successfully");
+            return student1;
+        }else{
+            log.info("Student not found in the Database");
+            return null;
+        }
+    }
 
 
 }
