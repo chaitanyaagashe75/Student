@@ -39,7 +39,10 @@ public class StudentController {
         return studentService.updateStudent(student);
     }
 
-    
+    @DeleteMapping("/delete")
+    public Student deleteStudent(@RequestParam Student student){
+        return studentService.deleteStudent(student);
+    }
 
 
 

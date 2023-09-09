@@ -58,7 +58,18 @@ public class StudentServiceImpl implements StudentService{
         }
     }
 
-
+    @Override
+    public Student deleteStudent(Student student) {
+        Optional<Student> OptStudent = studentRepository.findById(student.getId());
+        if(OptStudent.isPresent()){
+            Student student1= OptStudent.get();
+            log.info("Student deleted Successfully");
+            return student1;
+        }else{
+            log.info("Student not found in the Database");
+            return null;
+        }
+    }
 
 
 }

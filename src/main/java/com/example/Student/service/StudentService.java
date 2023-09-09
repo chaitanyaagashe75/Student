@@ -14,4 +14,6 @@ public interface StudentService {
    public List<Student> fetchAllStudent();
 
    public Student updateStudent(Student student);
+
+   public Student deleteStudent(Student student);
 }
