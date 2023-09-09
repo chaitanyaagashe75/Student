@@ -50,7 +50,7 @@ public class StudentServiceImpl implements StudentService{
            student1.setName(student.getName());
            student1.setSurname(student.getSurname());
            student1.setCity(student.getCity());
-           student1.getPhoneNumber(student.getPhoneNumber());
+           student1.setPhoneNumber(student.getPhoneNumber());
             return student1;
         }else{
             log.info("student not found");
