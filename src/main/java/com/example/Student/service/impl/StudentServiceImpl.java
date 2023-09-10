@@ -51,6 +51,7 @@ public class StudentServiceImpl implements StudentService{
            student1.setSurname(student.getSurname());
            student1.setCity(student.getCity());
            student1.setPhoneNumber(student.getPhoneNumber());
+            studentRepository.save(student1);
             return student1;
         }else{
             log.info("student not found");
